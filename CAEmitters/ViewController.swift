@@ -12,9 +12,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       snowDribbleBalls()
     }
 
-
+    func snowDribbleBalls(){
+        let emitter = Emitter.get(with: UIImage(named: "basketball")!)
+        //give it the center from which our balls are coming
+        emitter.emitterPosition = CGPoint(x: view.frame.width / 2, y: 0)
+        emitter.emitterSize = CGSize(width: view.frame.width, height: 0)
+        
+        //add emitter to the view
+        view.layer.addSublayer(emitter)
+        
+    }
+    
 }
 
